@@ -17,9 +17,9 @@ const testDB = async () => {
   try {
     await db.authenticate();
     //await db.sync();
-    //console.log('Successfully connected to database');
+    console.log('Successfully connected to database');
   } catch (err) {
-    //console.log('Unable to connect to database');
+    console.log('Unable to connect to database');
     console.error(err);
   }
 };
