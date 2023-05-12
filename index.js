@@ -20,8 +20,8 @@ app.use(express.json());
 app.use(
   cors({
     origin: ['https://ecommerce-backend-production-2b45.up.railway.app'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
+    //methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    //credentials: true,
   })
 );
 
