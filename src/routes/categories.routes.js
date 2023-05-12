@@ -16,7 +16,7 @@ router.post('/create', createCategory);
 router.get('/', getCategories);
 
 //READ A SPECIFIC CATEGORY
-router.get('/:id', getCategory);
+router.get('/getby/:id', getCategory);
 
 //UPDATE CATEGORY
 router.put('/update/:id', updateCategory);
