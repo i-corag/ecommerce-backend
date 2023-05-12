@@ -17,7 +17,7 @@ testDB();
 
 //MIDDLEWARES
 app.use(express.json());
-app.use(cors());
+app.use(cors('https://ecommerce-backend-production-2b45.up.railway.app/'));
 //{
 //origin: ['https://ecommerce-backend-production-2b45.up.railway.app'],
 //methods: ['GET', 'POST', 'PUT', 'DELETE'],
