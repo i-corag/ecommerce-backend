@@ -4,8 +4,8 @@ import expressSession from 'express-session';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import { testDB } from './src/database/db.config.js';
-import routerAPI from './src/routes/index.js';
+import { testDB } from './database/db.config.js';
+import routerAPI from './routes/index.js';
 
 dotenv.config();
 
@@ -17,14 +17,12 @@ testDB();
 
 //MIDDLEWARES
 app.use(express.json());
-app.use(
-  cors({
-    origin: ['https://ecommerce-backend-production-2b45.up.railway.app'],
-    //methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    //credentials: true,
-  })
-);
-
+app.use(cors());
+//{
+//origin: ['https://ecommerce-backend-production-2b45.up.railway.app'],
+//methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//credentials: true,
+// }
 //EXPRESS SESSION CONFIG
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
