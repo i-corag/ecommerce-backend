@@ -21,6 +21,7 @@ app.use(express.json());
 const whitelist = [
   'http://localhost:5173/',
   'https://ecommerce-backend-production-2b45.up.railway.app/',
+  'https://ecommerce-fontend.vercel.app',
 ];
 const options = {
   origin: (origin, callback) => {
