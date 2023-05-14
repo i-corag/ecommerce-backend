@@ -17,7 +17,22 @@ testDB();
 
 //MIDDLEWARES
 app.use(express.json());
-app.use(cors('https://ecommerce-backend-production-2b45.up.railway.app/'));
+
+const whitelist = [
+  'http://localhost:5173/',
+  'https://ecommerce-backend-production-2b45.up.railway.app/',
+];
+const options = {
+  origin: (origin, callback) => {
+    if (whitelist.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Access denied'));
+    }
+  },
+};
+app.use(cors(options));
+//app.use(cors('https://ecommerce-backend-production-2b45.up.railway.app/'));
 //{
 //origin: ['https://ecommerce-backend-production-2b45.up.railway.app'],
 //methods: ['GET', 'POST', 'PUT', 'DELETE'],
