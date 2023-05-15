@@ -37,6 +37,7 @@ app.use(
     origin: options,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 //app.use(cors('https://ecommerce-backend-production-2b45.up.railway.app/'));
@@ -52,6 +53,8 @@ app.use(
     saveUninitialized: true, //true?
     cookie: {
       maxAge: 3600 * 24 * 60 * 60 * 7, //one week
+      sameSite: true,
+      secure: true,
     },
   })
 );
