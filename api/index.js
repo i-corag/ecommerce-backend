@@ -37,7 +37,6 @@ app.use(
     origin: options,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 //app.use(cors('https://ecommerce-backend-production-2b45.up.railway.app/'));
