@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt';
+import { Store } from 'express-session';
 import userService from '../services/users.services.js';
 
 //Login
@@ -29,8 +30,8 @@ const userLogIn = async (req, res) => {
 
 //Verify if a session is started
 const isLoggedIn = (req, res) => {
-  if (req.session.cookie) {
-    return res.send({ loggedIn: true });
+  if (req.session) {
+    return res.send({ loggedIn: true, user: req.session.user });
   } else {
     return res.send({ loggedIn: false });
   }
@@ -38,7 +39,7 @@ const isLoggedIn = (req, res) => {
 
 //Logout
 const userLogOut = (req, res) => {
-  req.session.destroy();
+  Store.session.destroy();
   return res.status(200).send({ message: 'You are logged out' });
 };
 
