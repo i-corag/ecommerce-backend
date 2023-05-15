@@ -30,7 +30,7 @@ const userLogIn = async (req, res) => {
 //Verify if a session is started
 const isLoggedIn = (req, res) => {
   if (req.session.cookie) {
-    return res.send({ loggedIn: true, user: req.session.user });
+    return res.send({ loggedIn: true });
   } else {
     return res.send({ loggedIn: false });
   }
