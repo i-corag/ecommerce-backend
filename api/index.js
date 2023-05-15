@@ -19,7 +19,7 @@ testDB();
 app.use(express.json());
 
 const whitelist = [
-  'http://localhost:5173/',
+  //'http://localhost:5173/',
   'https://ecommerce-backend-production-2b45.up.railway.app/',
   'https://ecommerce-fontend.vercel.app',
 ];
@@ -49,8 +49,8 @@ app.use(
   expressSession({
     key: 'userId', //the key is the name of the cookie is going to create
     secret: process.env.SESSION_SECRET,
-    resave: true, //true?
-    saveUninitialized: true, //true?
+    resave: false, //true?
+    saveUninitialized: false, //true?
     cookie: {
       maxAge: 3600 * 24 * 60 * 60 * 7, //one week
       sameSite: true,
