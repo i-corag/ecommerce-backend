@@ -1,5 +1,4 @@
 import bcrypt from 'bcrypt';
-import { Store } from 'express-session';
 import userService from '../services/users.services.js';
 
 //Login
@@ -39,7 +38,7 @@ const isLoggedIn = (req, res) => {
 
 //Logout
 const userLogOut = (req, res) => {
-  Store.session.destroy();
+  req.session.destroy();
   return res.status(200).send({ message: 'You are logged out' });
 };
 
