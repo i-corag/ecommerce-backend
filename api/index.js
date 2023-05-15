@@ -52,7 +52,7 @@ app.use(
     saveUninitialized: false, //true?
     cookie: {
       maxAge: 3600 * 24 * 60 * 60 * 7, //one week
-      sameSite: true,
+      sameSite: 'none',
       secure: true,
     },
   })
