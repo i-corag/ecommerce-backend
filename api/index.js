@@ -39,6 +39,8 @@ app.use(
     credentials: true,
   })
 );
+
+app.set('trust proxy', 1);
 //app.use(cors('https://ecommerce-backend-production-2b45.up.railway.app/'));
 
 //EXPRESS SESSION CONFIG
